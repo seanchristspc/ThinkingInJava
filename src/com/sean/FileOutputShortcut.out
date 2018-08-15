@@ -1,0 +1,29 @@
+1: package com.sean.unit18;
+2: 
+3: import java.io.BufferedReader;
+4: import java.io.IOException;
+5: import java.io.PrintWriter;
+6: import java.io.StringReader;
+7: 
+8: public class FileOutputShortcut {
+9: 	static String file="FileOutputShortcut.out";
+10: 	
+11: 	public static void main(String[] args) throws IOException {
+12: 		BufferedReader in=
+13: 				new BufferedReader(
+14: 						new StringReader(BufferInputFile.read("F:/workplace/MyeclipseWork/ThinkingInJava/src/com/sean/unit18/FileOutputShortcut.java")));
+15: 		
+16: 		//Here's the shortcut:
+17: 		PrintWriter out=new PrintWriter("F:/workplace/MyeclipseWork/ThinkingInJava/src/com/sean/"+file);
+18: 		
+19: 		int lineCount=1;
+20: 		String s;
+21: 		while((s=in.readLine())!=null)
+22: 			out.println(lineCount++ +": "+s);
+23: 		out.close();
+24: 		
+25: 		//show the stored file
+26: 		System.out.println(BufferInputFile.read("F:/workplace/MyeclipseWork/ThinkingInJava/src/com/sean/"+file));
+27: 	}
+28: 
+29: }
