@@ -1,0 +1,32 @@
+1: package com.sean.unit18;
+2: 
+3: import java.io.BufferedReader;
+4: import java.io.BufferedWriter;
+5: import java.io.FileWriter;
+6: import java.io.IOException;
+7: import java.io.PrintWriter;
+8: import java.io.StringReader;
+9: 
+10: public class BasicFileOutput {
+11: 	
+12: 	static String file="BasicFileOutput.out";
+13: 	public static void main(String[] args) throws IOException {
+14: 		BufferedReader in=
+15: 				new BufferedReader(
+16: 						new StringReader(
+17: 								BufferInputFile.read(
+18: 										"F:/workplace/MyeclipseWork/ThinkingInJava/src/com/sean/unit18/BasicFileOutput.java")));
+19: 		
+20: 		PrintWriter out=new PrintWriter(new BufferedWriter(new FileWriter("F:/workplace/MyeclipseWork/ThinkingInJava/src/com/sean/unit18/"+file)));
+21: 		int lineCount=1;
+22: 		String s;
+23: 		while((s=in.readLine())!=null)
+24: 			out.println(lineCount++ +": "+s);
+25: 		out.close();
+26: 		
+27: 		//Show the stored file
+28: 		System.out.println(BufferInputFile.read(file));
+29: 
+30: 	}
+31: 
+32: }
