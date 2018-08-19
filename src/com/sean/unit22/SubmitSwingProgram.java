@@ -5,7 +5,7 @@ import java.util.concurrent.TimeUnit;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.SwingUtilities;
-
+import static com.sean.unit22.SwingConsole.*;
 public class SubmitSwingProgram extends JFrame {
 
 	JLabel label;
@@ -14,22 +14,11 @@ public class SubmitSwingProgram extends JFrame {
 		super("Hello Swing");
 		label=new JLabel("A label");
 		add(label);
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setSize(300,300);
-		setVisible(true);
 	}
-	static SubmitSwingProgram ssp;
+	
 	public static void main(String[] args) throws InterruptedException {
-		// TODO Auto-generated method stub
-		SwingUtilities.invokeLater(new Runnable() {
-			
-			@Override
-			public void run() {
-				// TODO Auto-generated method stub
-				ssp=new SubmitSwingProgram();
-			}
-			
-		});
+		SubmitSwingProgram ssp=new SubmitSwingProgram();
+		run(ssp, 300, 200);
 		TimeUnit.SECONDS.sleep(1);
 		SwingUtilities.invokeLater(new Runnable() {
 			
